@@ -1,6 +1,6 @@
 @import '../styles/colors.scss';
 
-.pkmn__main{
+.pkmn__main {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -10,17 +10,27 @@
     text-align: center;
 }
 
-.pkmn__card{
+.pkmn__card {
     min-width:250px;
     min-height:250px;
     background-color: $pk-red;
     border: 1px solid white;
 }
 
-.title{
+.title {
     display:flex;
     width:100%;
     height: 150px;
     align-items: center;
     justify-content: center;
+}
+
+.search__pkmn {
+    &__wrapper {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    
 }

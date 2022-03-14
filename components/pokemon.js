@@ -27,9 +27,9 @@ export default function Pokemon({pokemon}) {
                     alt={name}
                 />
                 <h1>{name}</h1>
-                {/* <span>
+                <span>
                     {specificPkmn.types.map((poke) => poke.type.name).join(', ')}
-                </span>  */}
+                </span> 
             </div>
             : <p>Loading Pokedex</p>}
         </div>
