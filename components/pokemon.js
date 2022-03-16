@@ -9,14 +9,16 @@ export default function Pokemon({pokemon}) {
     const {name} = pokemon
 
     useEffect(()=>{
-        try{
-            fetchPokemon(name, setPkmnData)
-        } catch (error) {
-            console.log("error :(")
-        }
+        (async () => {
+            try{
+                const result = await fetchPokemon(name)
+                setPkmnData(result)
+            } catch (error) {
+                console.log("error :(")
+            }
+        })()
     },[]);
-    // if (error) return <h1>Something went wrong!</h1>
-    // if (!result) return <h1>Loading...</h1>
+
     //console.log({name:specificPkmn.name})
     return (
         <div className={styles.pkmn__card} >

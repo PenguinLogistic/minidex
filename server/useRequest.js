@@ -9,13 +9,16 @@ async function useFetchDefault(callback) {
         callback(result.results)
 }
 
-async function fetchPokemon(name, callback) {
-    console.log(name, callback)
-    const uri = `${API_URL}/${name}` 
-    let result = await dbcall(uri)
-
-    if (Object.entries(result).length > 0) {
-        callback(result)
+async function fetchPokemon(name) {
+    //console.log(name, callback)
+    try{
+        const uri = `${API_URL}/${name}` 
+        let result = await dbcall(uri)
+        if (Object.entries(result).length > 0) {
+            return result
+        }
+    } catch (error){
+        return 404;
     }
 }
 
